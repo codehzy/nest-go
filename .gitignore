@@ -1,13 +1,12 @@
 # compiled output
-/dist
-/node_modules
-/src/secret/*
+dist
+node_modules
+/server/src/secret
 
 # Logs
 logs
 *.log
 npm-debug.log*
-pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
@@ -20,7 +19,7 @@ lerna-debug.log*
 /.nyc_output
 
 # IDEs and editors
-/.idea
+.idea
 .project
 .classpath
 .c9/
