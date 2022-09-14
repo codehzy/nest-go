@@ -49,7 +49,7 @@ export class TodosService {
       const res = await sequelize.query(sql, {
         type: Sequelize.QueryTypes.SELECT, // 查询方式
         raw: true, // 是否使用数组组装的方式展示结果
-        logging: true, // 是否打印sql语句
+        logging: false, // 是否打印sql语句
       });
 
       if (res.length) {
@@ -82,7 +82,6 @@ export class TodosService {
     status: number,
   ): Promise<any | undefined> {
     const sql = `INSERT INTO todos (title,description,status) VALUES ('${title}','${description}',${status})`;
-    console.log(sql);
     try {
       await sequelize.query(sql, { logging: false });
 
@@ -104,8 +103,6 @@ export class TodosService {
     description: string,
     status: number,
   ): Promise<any | undefined> {
-    console.log(title);
-
     const sql = `UPDATE todos SET description = '${description}', status = ${status} WHERE title = '${title}'`;
 
     try {
