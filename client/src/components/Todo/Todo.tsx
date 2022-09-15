@@ -57,6 +57,7 @@ export const Todo = () => {
   const createTodo = async () => {
     if (!newTodoTitle || !newTodoDescription) {
       message.warning("请检查代办事项或者代办事项描述是否为空");
+      return
     }
 
     // 添加 todo
