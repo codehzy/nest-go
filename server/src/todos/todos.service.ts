@@ -52,21 +52,12 @@ export class TodosService {
         logging: false, // 是否打印sql语句
       });
 
-      if (res.length) {
-        return {
-          code: 200,
-          data: {
-            res,
-          },
-        };
-      } else {
-        return {
-          code: 200,
-          data: {
-            res,
-          },
-        };
-      }
+      return {
+        code: 200,
+        data: {
+          res,
+        },
+      };
     } catch (err) {
       return {
         code: 503,

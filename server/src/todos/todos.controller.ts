@@ -1,4 +1,13 @@
-import { Body, Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Post,
+  Put,
+  UseGuards,
+} from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { TodosService } from './todos.service';
 
 @Controller('todos')
@@ -12,6 +21,7 @@ export class TodosController {
   }
 
   // 查询所有todo
+  @UseGuards(AuthGuard('jwt'))
   @Get('/findAll')
   getAllTodo(): Promise<any | undefined> {
     return this.todosService.findAll();
