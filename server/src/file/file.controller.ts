@@ -54,7 +54,6 @@ export class FileController {
     // 临时目录，然后调用第三方去upload 最后由定时job删除这个up目录就好了
     // 主要还是文件的上传和下载 上传比较简单
     const value = await this.oss.put(file.filename, normalize(file.path));
-    console.log(value);
 
     const {
       name,
@@ -70,7 +69,6 @@ export class FileController {
         url,
         lastUpdateTime: date,
       };
-      console.log(bookInfo);
 
       const res = await this.createBook(bookInfo);
 
