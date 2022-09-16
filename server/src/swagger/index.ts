@@ -2,9 +2,8 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 const swaggerOptions = new DocumentBuilder()
   .setTitle('nestJS9.0')
-  .setDescription('nestJS9.0')
+  .setDescription('nestJS9.0,nest纯逻辑练手项目')
   .setVersion('1.0')
-  .addTag('nestJS9.0')
   .addBasicAuth(
     {
       type: 'http',

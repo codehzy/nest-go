@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Todo as TodoType } from "../../../types/Todo";
 import axios from "axios";
 import { BASEURL } from "../../config/baseUrl";
-import { Button, message, Input } from "antd";
+import { Button, message, Input, Divider } from 'antd';
 import classes from "./Todo.module.css";
 
 const baseURL = BASEURL;
@@ -147,6 +147,7 @@ export const Todo = () => {
               添加
             </Button>
           </div>
+          <Divider plain>代办事项</Divider>
 
           <ul>
             {todos.map((todo) => (
